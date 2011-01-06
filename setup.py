@@ -23,7 +23,7 @@ from distutils.core import setup
 import mufeeder
 
 setup(name='mufeeder',
-	  version=mufeeder.version,
+	  #version=mufeeder.version,
 	  url='http://launchpad.net/mu-feeder',
 	  download_url='http://launchpad.net/mu-feeder/download',
 	  author='Robert Connolly',
