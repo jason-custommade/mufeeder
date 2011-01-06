@@ -21,7 +21,7 @@ import identica
 import sys
 
 try:
-	from member.mufeeder import settings
+	from mufeeder import settings
 except ImportError:
 	print "ERROR: Can't import settings.py, please create this file!"
 	sys.exit(1)

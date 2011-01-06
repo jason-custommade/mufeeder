@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License    #
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.       #
 ###############################################################################
-
+import sys
 import urllib, urllib2
 
 try:
@@ -25,7 +25,7 @@ except ImportError:
 	import simplejson as json
 
 try:
-	from member.mufeeder import settings
+	from mufeeder import settings
 except ImportError:
 	print "ERROR: Can't import settings.py, please create this file!"
 	sys.exit(1)
