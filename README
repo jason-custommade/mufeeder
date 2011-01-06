@@ -1,0 +1,103 @@
+						   Mu-Feeder
+	  A Free Software program to post RSS feeds to your microblog
+	  
+1. Introduction
+
+Mu-Feeder is intended to form a Free Software replacement to Twitterfeed
+(twitterfeed.com), which posts items from an RSS feed to popular
+microblogging services such as Twitter and Identi.ca.
+
+Mu-Feeder will take a link to your RSS or Atom feed (or any feed which
+feedparser can parse) and generate a summary including a shortened link
+to post to the specified account. The program is written with modularity
+in mind so that extra services and URL shorteners can be added easily.
+
+Currently there is support for the Ident.ca, Twitter and StatusNet
+compatible microblogging services as well as tr.im URL shortening
+support. The code has been tested under Python 2.6, but should work on
+earlier versions (the intention however is to move to 3.x as soon as
+feedparser has been ported).
+
+2. Copyright
+
+Copyright (C) 2009  Robert Connolly <rob@webworxshop.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See the file COPYING for more details.
+
+3. Installation and Usage
+
+There isn't really any formal installation process at the moment, you can
+just unpack the tarball and configure the program. Configuration is 
+achieved by copying the example_settings.py file and modifying it to suit.
+
+ $ cp example_settings.py settings.py
+ 
+Hopefully all the settings are pretty self explainatory, but they are also
+commented in the example file.
+
+To use the program just run it:
+
+ $ ./mu-feeder.py
+ 
+However, you might need to mark it as executable first:
+
+ $ chmod +x mu-feeder.py
+ 
+To make Mu-Feeder automatically update at specified intervals create a
+crontab job:
+
+Run the command 'crontab -e' to edit your cron jobs, and add the correct 
+line, e.g:
+
+30 * * * * mu-feeder.py > /dev/null
+
+Will run Mu-Feeder every 30 minutes.
+
+4. Bugs and Feature Requests
+
+Please report bugs on the launchpad bug tracker at 
+https://bugs.launchpad.net/mu-feeder, you can also ask questions or
+submit feature requests via the answers page at
+https://answers.launchpad.net/mu-feeder.
+
+If you would like to submit a patch to Mu-Feeder please create a bzr 
+merge directive (see below) and attach it to a bug report on launchpad.
+
+To create a merge derective, first branch the code:
+
+$ bzr branch lp:mu-feeder/0.1 
+
+for the latest 0.1.x release OR
+
+$ bzr branch lp:mu-feeder
+
+for the latest experimental code.
+
+Then make your changes and run 'bzr commit' and add a description of
+your changes in the commit message. Then run the following command to
+create the merge directive:
+
+bzr send -o 'name_of_patch.patch'
+
+Attach the resulting file to the bug report in question. All patches
+will be greatfully recieved!
+
+5. Contact
+
+If you wish to contact me regarding Mu-Feeder, please either use the
+launchpad page (http://launchpad.net/mu-feeder), email me 
+(rob@webworxshop.com) or contact me on Identi.ca (@robconnolly). You can
+also read my blog at http://blog.webworxshop.com.
